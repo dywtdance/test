@@ -1,4 +1,4 @@
-package com.better.second.shop;
+package com.better.fourth.shop;
 
 import com.better.first.entity.Fruit;
 
@@ -17,6 +17,7 @@ public class FruitShop {
     public FruitShop() {
         shop.put(new Fruit("apple", new BigDecimal("8")), new BigDecimal("8"));
         shop.put(new Fruit("strawberry", new BigDecimal("13")), new BigDecimal("13"));
+        shop.put(new Fruit("mango", new BigDecimal("20")), new BigDecimal("20"));
     }
 
     public void addFruit(String name, BigDecimal price) {

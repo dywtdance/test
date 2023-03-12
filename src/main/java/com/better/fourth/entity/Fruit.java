@@ -1,4 +1,4 @@
-package com.better.second.entity;
+package com.better.fourth.entity;
 
 import java.math.BigDecimal;
 import java.util.Objects;

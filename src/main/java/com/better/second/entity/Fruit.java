@@ -1,10 +1,10 @@
-package com.better.first.entity;
+package com.better.second.entity;
 
 import java.math.BigDecimal;
 import java.util.Objects;
 
 /**
- * 抽象水果类
+ * 水果类
  */
 public class Fruit {
     private String name;

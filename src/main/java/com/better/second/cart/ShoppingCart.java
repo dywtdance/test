@@ -1,7 +1,7 @@
-package com.better.first.cart;
+package com.better.second.cart;
 
-import com.better.first.entity.Fruit;
-import com.better.first.shop.FruitShop;
+import com.better.second.entity.Fruit;
+import com.better.second.shop.FruitShop;
 
 import java.math.BigDecimal;
 import java.util.HashMap;

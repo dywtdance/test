@@ -1,7 +1,7 @@
-package com.better.second.cart;
+package com.better.third.cart;
 
-import com.better.second.entity.Fruit;
-import com.better.second.shop.FruitShop;
+import com.better.third.entity.Fruit;
+import com.better.third.shop.FruitShop;
 
 import java.math.BigDecimal;
 import java.util.HashMap;
@@ -41,13 +41,7 @@ public class ShoppingCart {
         }
     }
 
-    public BigDecimal getTotalPrice() {
-        BigDecimal totalPrice = BigDecimal.ZERO;
-        for (Map.Entry<Fruit, Integer> entry : items.entrySet()) {
-            BigDecimal price = entry.getKey().getPrice();
-            int amount = entry.getValue();
-            totalPrice = totalPrice.add(price.multiply(new BigDecimal(amount)));
-        }
-        return totalPrice;
+    public Map<Fruit, Integer> getItems() {
+        return items;
     }
 }

@@ -1,4 +1,4 @@
-package com.better.first.shop;
+package com.better.second.shop;
 
 import com.better.first.entity.Fruit;
 
