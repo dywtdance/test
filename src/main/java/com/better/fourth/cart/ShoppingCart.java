@@ -47,6 +47,7 @@ public class ShoppingCart {
             int amount = entry.getValue();
             totalPrice = totalPrice.add(price.multiply(new BigDecimal(amount)));
         }
+        System.out.println("水果总价：" + totalPrice);
         return totalPrice;
     }
     public Map<Fruit, Integer> getItems() {
