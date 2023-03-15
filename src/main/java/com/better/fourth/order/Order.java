@@ -6,9 +6,11 @@ import com.better.fourth.entity.Fruit;
 
 import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class Order {
     /**
@@ -52,13 +54,20 @@ public class Order {
                         discountTotal = discountTotal.add(amount.multiply(itemDiscount));
                     }
                 }
-            }else if(coupon.getType() == Coupon.Type.REDUCE) {
-                if (totalPrice.compareTo(coupon.getMinPrice()) >= 0) {
-                    discountTotal = discountTotal.add(coupon.getSubPrice());
-                }
             }
         }
         totalPrice = totalPrice.subtract(discountTotal);
+
+        //根据满减类型进行计算
+        //先给满减价格排序
+        List<Coupon> list = couponList.stream().filter(coupon -> coupon.getType() == Coupon.Type.REDUCE)
+                .sorted((Comparator.comparing(Coupon::getMinPrice)).reversed()).toList();
+        for (Coupon coupon : list) {
+            //大于等于最大金额
+            if (totalPrice.compareTo(coupon.getMinPrice()) >= 0) {
+                totalPrice = totalPrice.subtract(coupon.getSubPrice());
+            }
+        }
         return totalPrice;
     }
 
