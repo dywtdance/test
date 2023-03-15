@@ -58,6 +58,8 @@ public class Order {
         }
         totalPrice = totalPrice.subtract(discountTotal);
 
+        System.out.println("水果打折优惠了：" + discountTotal);
+
         //根据满减类型进行计算
         //先给满减价格排序
         List<Coupon> list = couponList.stream().filter(coupon -> coupon.getType() == Coupon.Type.REDUCE)

@@ -22,9 +22,9 @@ public class TestFourth {
         }
         //添加进购物车
         ShoppingCart cart = new ShoppingCart(fruitShop);
-//        cart.addItem("apple",5); //
-        cart.addItem("strawberry",8);
-//        cart.addItem("mango",4);
+//        cart.addItem("apple",5);
+        cart.addItem("strawberry",10);
+        cart.addItem("mango",4);
 //        cart.addItem("orange",4);
 
         //店家给草莓打折0.8
@@ -32,6 +32,10 @@ public class TestFourth {
         discountCoupon.setType(Coupon.Type.DISCOUNT_FOR_ITEM);
         discountCoupon.setDiscountItem("strawberry");
         discountCoupon.setDiscount(new BigDecimal("0.8"));
+        Coupon discountCoupon2 = new Coupon();
+        discountCoupon2.setType(Coupon.Type.DISCOUNT_FOR_ITEM);
+        discountCoupon2.setDiscountItem("mango");
+        discountCoupon2.setDiscount(new BigDecimal("0.8"));
         //满100即减10
         Coupon reduceCoupon1 = new Coupon();
         reduceCoupon1.setType(Coupon.Type.REDUCE);
